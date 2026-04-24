@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>宇昊生日菜谱</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="app" aria-live="polite">
+      <section class="book" aria-label="生日菜谱书">
+        <button class="nav-icon nav-icon--left" id="prevPage" type="button" aria-label="上一页" title="上一页">
+          <span aria-hidden="true">‹</span>
+        </button>
+
+        <article class="spread" id="spread">
+          <section class="page page--cover is-active" data-page="cover">
+            <img class="cover-photo" src="WechatIMG4171.jpg" alt="自制香料烤鸡拼贴" />
+            <div class="cover-shade"></div>
+            <div class="cover-copy">
+              <p class="kicker">Birthday Recipe Book</p>
+              <h1>🥕的专属菜谱</h1>
+              <p>朋友们递来的几道菜，<br />装订成一本可以翻开的网页书。</p>
+              <button class="primary-action" id="openBook" type="button">翻开菜谱</button>
+            </div>
+          </section>
+
+          <section class="page page--catalog" data-page="catalog">
+            <div class="page-heading">
+              <h2>目录</h2>
+            </div>
+            <ol class="recipe-index" id="recipeIndex"></ol>
+          </section>
+
+          <section class="page page--recipe" data-page="recipe">
+            <div class="recipe-toolbar">
+              <div class="page-count" id="pageCount">1 / 7</div>
+            </div>
+            <div class="recipe-shell" id="recipeShell"></div>
+          </section>
+        </article>
+
+        <button class="nav-icon nav-icon--right" id="nextPage" type="button" aria-label="下一页" title="下一页">
+          <span aria-hidden="true">›</span>
+        </button>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
