@@ -381,7 +381,7 @@ const recipes = [
     sortKey: "you shou jiu hui de hua jiao ji tui",
     provider: "博雅",
     avatarImage: "avatar-boya.png",
-    recipeImage: "image5.png",
+    recipeImage: "WechatIMG4171.jpg",
     imageOnly: true,
     accent: "#6a9f3a",
     bottomLift: "large",
