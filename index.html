@@ -7,6 +7,12 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <div class="orientation-guard" id="orientationGuard" aria-hidden="true">
+      <div class="orientation-guard__inner">
+        <div class="orientation-guard__icon">↺</div>
+        <p>请横屏查看</p>
+      </div>
+    </div>
     <main class="app" aria-live="polite">
       <section class="book" aria-label="生日菜谱书">
         <button class="nav-icon nav-icon--left" id="prevPage" type="button" aria-label="上一页" title="上一页">
