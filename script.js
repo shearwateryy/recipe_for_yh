@@ -104,6 +104,22 @@ const recipes = [
     sections: [],
   },
   {
+    title: "煎饼果子",
+    sortKey: "jian bing guo zi",
+    provider: "晗铭",
+    avatarImage: "shm.png",
+    accent: "#8b6a45",
+    bottomLift: "medium",
+    mailNote: true,
+    blessing:
+      "亲爱的宇昊：\n\n生日快乐！\n\nshm\n\n附件：正宗天津煎饼果子视频教程 - BV1Wx411y76d",
+    video: {
+      title: "正宗天津煎饼果子视频教程",
+      url: "https://player.bilibili.com/player.html?isOutside=true&bvid=BV1Wx411y76d&page=1",
+    },
+    sections: [],
+  },
+  {
     title: "胡萝卜油饼🥕",
     sortKey: "hu luo bo you bing",
     provider: "苏妈",
@@ -138,7 +154,7 @@ const recipes = [
     sortKey: "huai hua ge li rou xian bao zi",
     provider: "小葛",
     avatarImage: "avatar-xiaoge.png",
-    recipeImage: "assets/menu2/image11.png",
+    recipeImage: "image11.png",
     imageOnly: true,
     accent: "#789b53",
     bottomLift: "large",
@@ -199,7 +215,7 @@ const recipes = [
     sortKey: "jin que hua jian dan",
     provider: "菲阳",
     avatarImage: "avatar-feiyang.png",
-    bodyImages: ["assets/menu2/image5.png", "assets/menu2/image6.png"],
+    bodyImages: ["image5.png", "image6.png"],
     accent: "#d1b454",
     bottomLift: "small",
     subtitle: "非常简单！",
@@ -365,7 +381,7 @@ const recipes = [
     sortKey: "you shou jiu hui de hua jiao ji tui",
     provider: "博雅",
     avatarImage: "avatar-boya.png",
-    recipeImage: "assets/recipes/image5.png",
+    recipeImage: "image5.png",
     imageOnly: true,
     accent: "#6a9f3a",
     bottomLift: "large",
@@ -378,7 +394,7 @@ const recipes = [
     sortKey: "wei xian chao tian guo",
     provider: "晓童",
     avatarImage: "avatar-xiaotong-chaotian.png",
-    recipeImage: "assets/menu2/image13.png",
+    recipeImage: "image13.png",
     scrollLeftPanel: true,
     sideCaption: "《上帝的食谱之卜格分析图》",
     accent: "#a56f46",
@@ -562,7 +578,7 @@ function showRecipe(index) {
     recipe.blessing || recipe.link
       ? `
       <section class="birthday-note">
-        ${recipe.blessing ? `<p>${recipe.blessing}</p>` : ""}
+        ${recipe.blessing ? `<p class="${recipe.mailNote ? "mail-note" : ""}">${recipe.blessing}</p>` : ""}
         ${
           recipe.link
             ? `<a class="recipe-link" href="${recipe.link.url}" target="_blank" rel="noreferrer">${recipe.link.label}</a>`
