@@ -485,28 +485,6 @@ const spread = document.querySelector("#spread");
 const pageCount = document.querySelector("#pageCount");
 const prevPage = document.querySelector("#prevPage");
 const nextPage = document.querySelector("#nextPage");
-const orientationGuard = document.querySelector("#orientationGuard");
-
-function isMobileLike() {
-  return window.matchMedia("(pointer: coarse)").matches || /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
-}
-
-function syncOrientationGuard() {
-  const portrait = window.matchMedia("(orientation: portrait)").matches;
-  const shouldGuard = isMobileLike() && portrait;
-  orientationGuard.classList.toggle("is-visible", shouldGuard);
-  orientationGuard.setAttribute("aria-hidden", shouldGuard ? "false" : "true");
-}
-
-async function tryLockLandscape() {
-  if (!isMobileLike()) return;
-  if (!screen.orientation?.lock) return;
-  try {
-    await screen.orientation.lock("landscape");
-  } catch (_error) {
-    // Some mobile browsers only allow orientation lock in special contexts.
-  }
-}
 
 function setPage(nextPageName) {
   page = nextPageName;
@@ -648,8 +626,6 @@ function buildIndex() {
 buildIndex();
 pageCount.textContent = `1 / ${recipes.length}`;
 updateNav();
-syncOrientationGuard();
-tryLockLandscape();
 
 document.querySelector("#openBook").addEventListener("click", () => setPage("catalog"));
 document.querySelector("#closeCatalog").addEventListener("click", () => setPage("catalog"));
@@ -692,10 +668,4 @@ document.addEventListener("keydown", (event) => {
   if (event.key === "Escape" && page === "recipe") {
     setPage("catalog");
   }
-});
-
-window.addEventListener("resize", syncOrientationGuard);
-window.addEventListener("orientationchange", () => {
-  syncOrientationGuard();
-  tryLockLandscape();
 });

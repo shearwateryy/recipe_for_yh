@@ -40,37 +40,6 @@ button {
   width: min(1360px, 100%);
 }
 
-.orientation-guard {
-  position: fixed;
-  inset: 0;
-  z-index: 50;
-  display: none;
-  place-items: center;
-  padding: 24px;
-  background: #f0d9b8;
-}
-
-.orientation-guard.is-visible {
-  display: grid;
-}
-
-.orientation-guard__inner {
-  text-align: center;
-  color: var(--ink);
-}
-
-.orientation-guard__icon {
-  font-size: 3rem;
-  line-height: 1;
-  margin-bottom: 12px;
-}
-
-.orientation-guard__inner p {
-  margin: 0;
-  font-size: 1.2rem;
-  font-weight: 800;
-}
-
 .spread {
   position: relative;
   min-height: min(820px, calc(100vh - 72px));
@@ -668,9 +637,13 @@ h3.centered-title {
   right: -22px;
 }
 
-@media (max-width: 760px) and (orientation: portrait) {
+@media (max-width: 760px) {
   .app {
     padding: 14px;
+  }
+
+  .book {
+    width: 100%;
   }
 
   .spread {
@@ -742,43 +715,5 @@ h3.centered-title {
 
   .nav-icon--right {
     right: 24px;
-  }
-}
-
-@media (max-width: 960px) and (orientation: landscape) and (pointer: coarse) {
-  .app {
-    padding: 10px;
-  }
-
-  .book {
-    width: 100%;
-  }
-
-  .spread {
-    min-height: calc(100vh - 20px);
-  }
-
-  .recipe-shell {
-    gap: 18px;
-    grid-template-columns: minmax(210px, 0.62fr) minmax(0, 1.38fr);
-  }
-
-  .provider-photo {
-    width: 86px;
-  }
-
-  .recipe-section p,
-  .recipe-section li,
-  .birthday-note p {
-    font-size: 1rem;
-    line-height: 1.72;
-  }
-
-  .nav-icon--left {
-    left: -8px;
-  }
-
-  .nav-icon--right {
-    right: -8px;
   }
 }
