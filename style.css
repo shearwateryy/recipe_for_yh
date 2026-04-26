@@ -469,6 +469,10 @@ h3.centered-title {
   line-height: 1.9;
 }
 
+.birthday-note .mail-note {
+  white-space: pre-line;
+}
+
 .recipe-link {
   display: inline-block;
   margin-top: 14px;
